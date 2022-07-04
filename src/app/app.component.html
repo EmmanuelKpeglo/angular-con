@@ -1,5 +1,11 @@
-<p>Counter : {{counter | async}}</p>
+<!-- <p>Counter : {{counter | async}}</p>
 
 <button (click)="increment()">+</button>
 <button (click)="reset()">Reset</button>
-<button (click)="decrement()">-</button>
+<button (click)="decrement()">-</button> -->
+
+
+<div class="home">
+    <app-todo-list [todos]="todos" (change)="changeTime()"></app-todo-list>
+    <app-todo-dashboard [totalItems]="todos.length" (change)="deleteAll()" [lastUpdate]="lastUpdate"></app-todo-dashboard>
+</div>

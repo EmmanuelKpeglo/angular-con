@@ -1,0 +1,15 @@
+<h1>Todo List</h1>
+
+<div>
+    <input type="text" (keyup)="onEnter($event, todo)" #todo required>
+    <button (click)="addTodo(todo)" style="margin-left: 9px;">Add</button>
+
+    <ul style="padding-left: 0; margin-left: 21px;">
+        <li *ngFor="let todo of todos">
+            <p (click)="strikeThrough($event)">{{todo.todo}} <span><button (click)="removeTodo(todo)">Remove</button></span></p>
+        </li>
+    </ul>
+
+</div>
+
+
