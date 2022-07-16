@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { INITIAL_STATE, Store } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { DECREMENT, INCREMENT, RESET } from '../core/counter.action';
-import { CounterState } from '../core/counter.store';
 
 @Component({
   selector: 'app-counter',
@@ -10,9 +9,9 @@ import { CounterState } from '../core/counter.store';
   styleUrls: ['./counter.component.css']
 })
 export class CounterComponent implements OnInit {
-  counter: Observable<CounterState>
+  counter: Observable<number>
 
-  constructor(private store: Store<{ count: CounterState }>) { 
+  constructor(private store: Store<{ count: 0 }>) { 
     store.dispatch({ type: RESET })
     this.counter = store.select('count')
   }
